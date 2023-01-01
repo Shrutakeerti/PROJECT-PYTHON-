@@ -1,0 +1,25 @@
+import csv
+
+# field names
+fields = ['Batch ID', 'Batch Name', 'Department Name']
+
+# data rows of csv file
+rows = [['CSE201', 'CSE2001', 'CSE'],
+        ['CSE202', 'CSE2002', 'CSEAI'],
+        ['CSE203', 'CSE2003', 'CSEIOT',],
+        ['ECE204', 'ECE2004', 'ECE'],
+        ['ME205', 'ME2005', 'ME']]
+
+# name of csv file
+filename = "batch_records.csv"
+
+# writing to csv file
+with open(filename, 'w') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+
+    # writing the fields
+    csvwriter.writerow(fields)
+
+    # writing the data rows
+    csvwriter.writerows(rows)
