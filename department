@@ -1,0 +1,25 @@
+import csv
+
+# field names
+fields = ['Department ID', 'Department Name', 'List of Batches']
+
+# data rows of csv file
+rows = [['CSE', 'Computer science and Engineering','CSE:21'],
+        ['CSEIOT','Computer Science And Engineering','CSEIOT:19'],
+        ['CSEAI', 'Computer science and Engineering AI', 'CSEAI:32',],
+        ['ECE', 'Electronics and Communication Engineering', 'ECE:20'],
+        ['ME', 'MEchanical Engineering', 'ME:29']]
+
+# name of csv file
+filename = "department_records.csv"
+
+# writing to csv file
+with open(filename, 'w') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+
+    # writing the fields
+    csvwriter.writerow(fields)
+
+    # writing the data rows
+    csvwriter.writerows(rows)
