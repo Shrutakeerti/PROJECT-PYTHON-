@@ -1,0 +1,28 @@
+import csv
+
+
+# field names
+fields = ['Course ID','Course Name','Marks Obtained']
+
+# data rows of csv file
+rows = [ ['C001', 'Python', 'C001:C003-76'],
+        ['C002','Physics','C002:C004-98'],
+        ['C003', 'Internet', 'C003:C007-87'],
+        ['C004','AIML','C004:C010-88'],
+        ['C005','IOT','C005:C011-99'],
+        ['C006', 'EP','C006:C012-90']]
+
+# name of csv file
+filename = "course_records.csv"
+
+# writing to csv file
+with open(filename, 'w') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+
+    # writing the fields
+    csvwriter.writerow(fields)
+
+    # writing the data rows
+    csvwriter.writerows(rows)
+    print(rows)
