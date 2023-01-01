@@ -1,0 +1,25 @@
+import csv
+
+# field names
+fields = ['Student ID','Name,''Class Roll no','Batch ID']
+
+# data rows of csv file
+rows = [['CSE 201','ADRIKA ROY','1','CSE21'],
+        ['CSE202AI', 'RITIKA DAS','2','CSE22'],
+        ['CSE203IOT', 'LALIT SONG', '3', 'CSE23'],
+        ['ECE204', 'SHRUTI SEN', '4', 'CSE24'],
+        ['ME205', 'NAREN DATTA', '5', 'CSE25']]
+
+# name of csv file
+filename = "student_records.csv"
+
+# writing to csv file
+with open(filename, 'w') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+
+    # writing the fields
+    csvwriter.writerow(fields)
+
+    # writing the data rows
+    csvwriter.writerows(rows)
